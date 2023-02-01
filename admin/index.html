@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" defer></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" defer></script>
+    <script type="text/javascript" src="js/main.js" defer></script>
+  
+
+    <style>
+        .container {
+            width: 450px;
+            margin: 15px auto;
+            text-align: center;
+            color: #777777;
+        }
+
+        ul.tabs {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        ul.tabs li {
+            background: none;
+            display: inline-block;
+            width: 70px;
+            height: 33px;
+            cursor: pointer;
+            border: 1px solid #1e3259;
+            border-radius: 20px;
+            margin: 0 1px;
+            padding-top: 6px;
+        }
+
+        ul.tabs li:hover {
+            background: #1e3259;
+            color: #fff;
+        }
+
+        ul.tabs li.current {
+            background: #1e3259;
+            color: #fff;
+        }
+
+        .tab-content {
+            width: 420px;
+            display: none;
+            background: #f1f1f1;
+            padding: 0;
+            margin: auto;
+            border-radius: 10px;
+            padding: 20px 0;
+        }
+
+        .tab-content.current {
+            display: inherit;
+        }
+    </style>
+
+
+    <title>인큐랩 관리자</title>
+</head>
+
+
+<body>
+
+
+    <header>
+        <div class="header_box">
+            <div class="ddd">
+                <div class="header_1">
+                    <a href="#"><img src="images/main_logo.png" alt="메인로고" class="main_logo"></a>
+                    <div class="mobile mo_topmenu">
+                        <a href="#" class="mo_menu">보증금 반환목록</a>
+                        <a href="" class="mo_menu">통계</a>
+                    </div>
+                    <ul class="main_menu">
+                        <li><a href="#">임차/임대인 관리</a>
+                            <ul class="sub_ul">
+                                <li><a href="#">임차인</a></li>
+                                <li><a href="#">임대인</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">건물관리</a>
+                            <ul class="sub_ul">
+                                <li><a href="#">계약대기</a></li>
+                                <li><a href="#">건물관리(도어락)</a></li>
+                                <li><a href="#">입금내역</a></li>
+                                <li><a href="#">출금내역</a></li>
+                                <li><a href="#">보증금입출금</a></li>
+                                <li><a href="#">건물별임금현황</a></li>
+                                <li><a href="#">보증금반환목록</a></li>
+                                <li><a href="#">미납목록</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">공지사항</a>
+                            <ul class="sub_ul">
+                                <li><a href="#">공지사항</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">통계</a>
+                            <ul class="sub_ul">
+                                <li><a href="#">통계</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">환경설정</a>
+                            <ul class="sub_ul">
+                                <li><a href="#">관리가 건물관리</a></li>
+                                <li><a href="#">관리자 계약관리</a></li>
+                                <li><a href="#">관리가 (직원)관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="header_login_box">
+                        <img src="images/mainId_03.png" alt="로그인아이디 이미지" class="login_img">
+                        <div class="header_login_text">
+                            <p class="header_p">관리자님 환영합니다.</p>
+                            <button class="logOut">로그아웃</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div class="wrapper">
+
+
+
+        <div class="main_box1">
+            <h2 class="main_h2">최근계약현황</h2>
+            <div id="bar-chart">
+                <div class="graph">
+                    <ul class="x-axis pc">
+                        <li><span>2월21일</span></li>
+                        <li><span>2월22일</span></li>
+                        <li><span>2월23일</span></li>
+                        <li><span>2월24일</span></li>
+                        <li><span>2월25일</span></li>
+                        <li><span>2월26일</span></li>
+                        <li><span>2월27일</span></li>
+                    </ul>
+                    <ul class="x-axis mobile">
+                        <li><span>2.21</span></li>
+                        <li><span>2.22</span></li>
+                        <li><span>2.23</span></li>
+                        <li><span>2.24</span></li>
+                        <li><span>2.25</span></li>
+                        <li><span>2.26</span></li>
+                        <li><span>2.27</span></li>
+                    </ul>
+                    <ul class="y-axis">
+                        <li><span></span></li>
+                        <li><span></span></li>
+                    </ul>
+                    <div class="bars">
+                        <div class="bar-group">
+                            <div class="bar bar-1 stat-1" style="height: 51%;">
+                                <span>4080</span>
+                            </div>
+                            <div class="bar bar-2 stat-2" style="height: 31%;">
+                                <span>5680</span>
+                            </div>
+                            <div class="bar bar-3 stat-3" style="height: 13%;">
+                                <span>1040</span>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-4 stat-1" style="height: 26%;">
+                                <span>6080</span>
+                            </div>
+                            <div class="bar bar-5 stat-2" style="height: 56%;">
+                                <span>6880</span>
+                            </div>
+                            <div class="bar bar-6 stat-3" style="height: 42%;">
+                                <span>1760</span>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-7 stat-1" style="height: 90%;">
+                                <span>6240</span>
+                            </div>
+                            <div class="bar bar-8 stat-2" style="height: 72%;">
+                                <span>5760</span>
+                            </div>
+                            <div class="bar bar-9 stat-3" style="height: 36%;">
+                                <span>2880</span>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-10 stat-1" style="height: 44%;">
+                                <span>3520</span>
+                            </div>
+                            <div class="bar bar-11 stat-2" style="height: 64%;">
+                                <span>5120</span>
+                            </div>
+                            <div class="bar bar-12 stat-3" style="height: 50%">
+                                <span>4720</span>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-13 stat-1" style="height: 80%;">
+                                <span>2240</span>
+                            </div>
+                            <div class="bar bar-14 stat-2" style="height: 33%;">
+                                <span>2640</span>
+                            </div>
+                            <div class="bar bar-15 stat-3" style="height: 20%;">
+                                <span>7520</span>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-16 stat-1" style="height: 51%;">
+                                <span>4080</span>
+                            </div>
+                            <div class="bar bar-17 stat-2" style="height: 71%;">
+                                <span>5680</span>
+                            </div>
+                            <div class="bar bar-18 stat-3" style="height: 13%;">
+                                <span>1040</span>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-19 stat-1" style="height: 78%;">
+                                <span>6240</span>
+                            </div>
+                            <div class="bar bar-20 stat-2" style="height: 72%;">
+                                <span>5760</span>
+                            </div>
+                            <div class="bar bar-21 stat-3" style="height: 36%;">
+                                <span>2880</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main_box1_sub">
+                <ul>
+                    <li>
+                        <div class="blue"></div>
+                        계약
+                    </li>
+                    <li>
+                        <div class="sky"></div>
+                        연장
+                    </li>
+                    <li>
+                        <div class="orange"></div>
+                        해지
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="main_box2">
+            <h2 class="main_h2">입출금 현황<a href=#" class="skybtn">통계</a></h2>
+            <div class="container">
+                <ul class="tabs">
+                    <li class="tab-link" data-tab="tab-1">오늘</li>
+                    <li class="tab-link current" data-tab="tab-2">1주일</li>
+                    <li class="tab-link" data-tab="tab-3">1개월</li>
+                    <li class="tab-link" data-tab="tab-4">3개월</li>
+                    <li class="tab-link" data-tab="tab-5">6개월</li>
+                </ul>
+
+                <p class="main_subP">2020년 02월 03일 ~ 2020년 02월 10일</p>
+                <div class="main_box2_sub">
+                    <div id="tab-1" class="tab-content current">
+                        <ul>
+                            <li class="main_box2_txt1">입금금액</li>
+                            <li class="main_box2_txt2">255,000,000원</li>
+                        </ul>
+                        <ul>
+                            <li class="main_box2_txt1">출금금액</li>
+                            <li class="main_box2_txt2">255,000,000원</li>
+                        </ul>
+                        <ul class="main_box2_txtBox">
+                            <li class="main_box2_txt1">수입</li>
+                            <li class="main_box2_txt3">456,000,000원</li>
+                        </ul>
+                    </div>
+
+                    <div id="tab-2" class="tab-content">
+                        <ul>
+                            <li class="main_box2_txt1">입금금액</li>
+                            <li class="main_box2_txt2">123,000,000원</li>
+                        </ul>
+                        <ul>
+                            <li class="main_box2_txt1">출금금액</li>
+                            <li class="main_box2_txt2">212,000,000원</li>
+                        </ul>
+                        <ul class="main_box2_txtBox">
+                            <li class="main_box2_txt1">수입</li>
+                            <li class="main_box2_txt3">789,000,000원</li>
+                        </ul>
+                    </div>
+
+                    <div id="tab-3" class="tab-content">
+                        <ul>
+                            <li class="main_box2_txt1">입금금액</li>
+                            <li class="main_box2_txt2">7,000,000원</li>
+                        </ul>
+                        <ul>
+                            <li class="main_box2_txt1">출금금액</li>
+                            <li class="main_box2_txt2">8,000,000원</li>
+                        </ul>
+                        <ul class="main_box2_txtBox">
+                            <li class="main_box2_txt1">수입</li>
+                            <li class="main_box2_txt3">255,000,000원</li>
+                        </ul>
+                    </div>
+
+                    <div id="tab-4" class="tab-content">
+                        <ul>
+                            <li class="main_box2_txt1">입금금액</li>
+                            <li class="main_box2_txt2">85,000,000원</li>
+                        </ul>
+                        <ul>
+                            <li class="main_box2_txt1">출금금액</li>
+                            <li class="main_box2_txt2">65,000,000원</li>
+                        </ul>
+                        <ul class="main_box2_txtBox">
+                            <li class="main_box2_txt1">수입</li>
+                            <li class="main_box2_txt3">255,000,000원</li>
+                        </ul>
+                    </div>
+
+                    <div id="tab-5" class="tab-content">
+                        <ul>
+                            <li class="main_box2_txt1">입금금액</li>
+                            <li class="main_box2_txt2">2,000,000원</li>
+                        </ul>
+                        <ul>
+                            <li class="main_box2_txt1">출금금액</li>
+                            <li class="main_box2_txt2">300,000원</li>
+                        </ul>
+                        <ul class="main_box2_txtBox">
+                            <li class="main_box2_txt1">수입</li>
+                            <li class="main_box2_txt3">2,300,000원</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div> <!-- container end -->
+        </div><!-- main_box2 end -->
+
+
+
+        <div class="main_box3">
+            <h2 class="main_h2">지역별 계약현황</h2>
+            <!-- 왼쪽 -->
+            
+            <div class="box3_sub">
+                <div class="aaa"></div><!-- 원 -->
+                <div class="bbb pc"></div><!-- 선 -->
+                <div class="txt_box">158/2504</div><!-- 글 -->
+            </div>
+            <div class="box3_sub2">
+                <div class="aaa2"></div><!-- 원 -->
+                <div class="bbb2 pc"></div><!-- 선 -->
+                <div class="txt_box2">158/2504</div><!-- 글 -->
+            </div>
+            <div class="box3_sub3">
+                <div class="aaa3"></div><!-- 원 -->
+                <div class="bbb3 pc"></div><!-- 선 -->
+                <div class="txt_box3">158/2504</div><!-- 글 -->
+            </div>
+            <div class="box3_sub4">
+                <div class="aaa4"></div><!-- 원 -->
+                <div class="bbb4 pc"></div><!-- 선 -->
+                <div class="txt_box4">158/2504</div><!-- 글 -->
+            </div>
+            <div class="box3_sub5">
+                <div class="aaa5"></div><!-- 원 -->
+                <div class="bbb5 pc"></div><!-- 선 -->
+                <div class="txt_box5">158/2504</div><!-- 글 -->
+            </div>
+
+            <!-- 오른쪽 -->
+            <div class="box3_sub6">
+                <div class="aaa6"></div><!-- 원 -->
+                <div class="bbb6 pc"></div><!-- 선 -->
+                <div class="txt_box6">158/2504</div><!-- 글 -->
+            </div>
+            <div class="box3_sub7">
+                <div class="aaa7"></div><!-- 원 -->
+                <div class="bbb7 pc"></div><!-- 선 -->
+                <div class="txt_box7">158/2504</div><!-- 글 -->
+            </div>
+            <div class="box3_sub8">
+                <div class="aaa8"></div><!-- 원 -->
+                <div class="bbb8 pc"></div><!-- 선 -->
+                <div class="txt_box8">158/2504</div><!-- 글 -->
+            </div>
+            
+        </div>
+
+                <!-- 목록 5개씩 보이게 -->
+        <div class="main_box4">
+            <h2 class="main_h2">오늘의 현황</h2>
+            <ul>
+                <li><button class="sky_btn mo_mainbtn" id="main_pop">대기목록</button></li>
+                <form>
+                    <li>
+                        <select class="main_box4_sel">
+                            <option>입금</option>
+                            <option>출금</option>
+                            <option>미납</option>
+                        </select>
+                    </li>
+                    <li>
+                        <p class="li_p">지역</p>
+                        <select class="main_box4_sel">
+                            <option>전체</option>
+                            <option>서울</option>
+                            <option>경기</option>
+                            <option>인천</option>
+                        </select>
+                    </li>
+                    <li>
+                        <p class="li_p">건물</p>
+                        <select class="main_box4_sel2">
+                            <option>해피오피스텔</option>
+                            <option>세드오피스텔</option>
+                            <option>그런빌라</option>
+                            <option>이런빌라</option>
+                        </select>
+                    </li>
+                </form>
+            </ul>
+
+            <div class="main_table_box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="pc">번호</th>
+                            <th class="pc">입출금<br>코드</th>
+                            <th>발생일자</th>
+                            <th>금액</th>
+                            <th class="pc">주소</th>
+                            <th>건물명</th>
+                            <th>호수<br>/층수</th>
+                            <th>임차인</th>
+                            <th class="pc">확인</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pc">504</td>
+                            <td class="code pc">GEgr3</td>
+                            <td>2020.03.01<br>15:55:11</td>
+                            <td>350,000</td>
+                            <td class="pc">서울특별시 강남구 행복로 22번길 44</td>
+                            <td>스페이스오피스텔</td>
+                            <td>201/2층</td>
+                            <td>박모건</td>
+                            <td class="pc"><img src="images/icon_c.png"></td>
+                        </tr>
+                        <tr>
+                            <td class="pc">504</td>
+                            <td class="code pc">GEgr3</td>
+                            <td>2020.03.01<br>15:55:11</td>
+                            <td>350,000</td>
+                            <td class="pc">서울특별시 강남구 행복로 22번길 44</td>
+                            <td>스페이스오피스텔</td>
+                            <td>201/2층</td>
+                            <td>박모건</td>
+                            <td class="pc"><img src="images/icon_c.png"></td>
+                        </tr>
+                        <tr>
+                            <td class="pc">504</td>
+                            <td class="code pc">GEgr3</td>
+                            <td>2020.03.01<br>15:55:11</td>
+                            <td>350,000</td>
+                            <td class="pc">서울특별시 강남구 행복로 22번길 44</td>
+                            <td>스페이스오피스텔</td>
+                            <td>201/2층</td>
+                            <td>박모건</td>
+                            <td class="pc"><img src="images/icon_q.png"></td>
+                        </tr>
+                        <tr>
+                            <td class="pc">504</td>
+                            <td class="code pc">GEgr3</td>
+                            <td>2020.03.01<br>15:55:11</td>
+                            <td>350,000</td>
+                            <td class="pc">서울특별시 강남구 행복로 22번길 44</td>
+                            <td>스페이스오피스텔</td>
+                            <td>201/2층</td>
+                            <td>박모건</td>
+                            <td class="pc"><img src="images/icon_q.png"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page_box">
+                <ul class="asd">
+                    <li><i class="fas fa-angle-left"></i></li>
+                    <li class="middle"><input type="text" name="" id="" class="pageTxt"> / 20</li>
+                    <li><i class="fas fa-angle-right"></i></li>
+                </ul>
+            </div>
+        </div>
+
+<!-- 5개씩-->
+        <div class="main_pop">
+            <div class="main_pop_box">
+                <img src="images/sub_close_03.jpg" class="fa-times close">
+                <h2 class="main_h2">입출금 대기목록</h2>
+                <ul>
+                   <form>
+                    <li>유형</li>
+                        <li>
+                            <select class="pop_sel1">
+                                <option>입금대기</option>
+                                <option>출금대기</option>
+                                <option>부동산수수료대기</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="pop_sel2">
+                                <option>2020</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="pop_sel3">
+                                <option>01</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="pop_sel3">
+                                <option>1</option>
+                               
+                            </select>
+                        </li>
+                        <li><input type="text" name="" id="" placeholder="검색어를 입력해주세요."></li>
+                        <li><button class="blue_btn" type="submit">검색</button></li>
+                    </form>
+                </ul>
+                <button class="xls_btn mainPop_xls"><img src="images/xis_03.jpg" alt="엑셀">엑셀저장</button>
+
+                <div class="pop_tb_box">
+                    <table>
+                       <thead>
+                        <tr>
+                            <th class="pc">번호</th>
+                            <th class="pc">건물코드</th>
+                            <th class="pc">주소</th>
+                            <th class="pc">건물명</th>
+                            <th class="pc">건물상세코드</th>
+                            <th class="pc">호수/층수</th>
+                            <th>임차인</th>
+                            <th>은행</th>
+                            <th>계좌번호</th>
+                            <th>금액</th>
+                        </tr></thead>
+                        <tbody>
+                        <tr>
+                            <td class="pc">540</td>
+                            <td class="code pc">test123</td>
+                            <td class="pc">서울특별시 강남구 행복로22번길 44</td>
+                            <td class="pc">나라오피스텔</td>
+                            <td class="code pc">test123</td>
+                            <td class="pc">201호/2층</td>
+                            <td>홍길동</td>
+                            <td>우리은행</td>
+                            <td>46875-28-48575</td>
+                            <td>350,000</td>
+                        </tr>
+                         <tr>
+                            <td class="pc">540</td>
+                            <td class="code pc">test123</td>
+                            <td class="pc">서울특별시 강남구 행복로22번길 44</td>
+                            <td class="pc">나라오피스텔</td>
+                            <td class="code pc">test123</td>
+                            <td class="pc">201호/2층</td>
+                            <td>홍길동</td>
+                            <td>우리은행</td>
+                            <td>46875-28-48575</td>
+                            <td>350,000</td>
+                        </tr>
+                        <tr>
+                            <td class="pc">540</td>
+                            <td class="code pc">test123</td>
+                            <td class="pc">서울특별시 강남구 행복로22번길 44</td>
+                            <td class="pc">나라오피스텔</td>
+                            <td class="code pc">test123</td>
+                            <td class="pc">201호/2층</td>
+                            <td>홍길동</td>
+                            <td>우리은행</td>
+                            <td>46875-28-48575</td>
+                            <td>350,000</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page_box">
+                    <ul class="asd">
+                        <li><i class="fas fa-angle-left"></i></li>
+                        <li class="middle"><input type="text" name="" id="" class="pageTxt"> / 20</li>
+                        <li><i class="fas fa-angle-right"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   
+
+</body></html>

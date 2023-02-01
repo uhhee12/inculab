@@ -1,0 +1,4497 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+    position: relative;
+    background: #edf0f5;
+    max-width: 768px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+button{
+    font-weight: 400;
+}
+
+input.datepicker{
+    border-radius: 10px;
+}
+table th{font-size: 15px;}
+table td{font-size: 15px;}
+
+
+
+/*인트로*/
+
+.wraper_intro {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.intro_flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #1e3259;
+    z-index: 2;
+}
+
+
+
+.intro_flash .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    max-width: 140px;
+    transform: scale(1) translate(-50%, -50%);
+    animation: intro_logo 1s;
+}
+
+@keyframes intro_logo {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+}
+
+.login .login_box {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.login .login_box .logo_b {
+    width: 40%;
+    margin-bottom: 50px;
+}
+
+.login .login_box input {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    background: #edf0f5;
+    margin-bottom: 10px;
+}
+
+.login .login_box .login_btn1 {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 30px;
+    background: #1e3259;
+}
+
+.login .login_box .num {
+    text-align: left;
+    padding-left: 10px;
+    position: relative;
+}
+
+.login .login_box .time {
+    position: absolute;
+    right: 10px;
+    bottom: 90px;
+}
+
+.login .login_box .login_btn2 {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background: #ff7539;
+    color: #fff;
+}
+
+.login .error {
+    text-align: center;
+    font-size: 14px;
+    color: #2eaded;
+    font-weight: 400;
+}
+
+.login .error .bold {
+    font-weight: bold;
+}
+
+.login .error .error_btn {
+    border: 1px solid #1e3259;
+    width: 30%;
+    height: 35px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    box-shadow: 0 5px 5px 0 #e7e7e7;
+}
+
+
+
+/*비밀번호 설정pw*/
+.wraper {
+    position: relative;
+}
+
+
+.pw_box {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 40px;
+    text-align: center;
+
+}
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+}
+
+.logo_b_pw {
+    width: 48%;
+}
+
+.pw_h1 {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.pw_circle {
+    width: 100%;
+    list-style: none;
+}
+
+.pw_circle li {
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    display: inline-block;
+    background: #cad3e1;
+    margin: 3px;
+}
+
+.wraper .pw_circle .circle_color {
+    background: #6d81a6;
+}
+
+.pw_btn {
+    border: 1px solid #1e3259;
+    color: #1e3259;
+    width: 50%;
+    height: 35px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.wraper .pw_num {
+    width: 100%;
+    height: auto;
+    padding: 0 3%;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.wraper .pw_num table {
+    margin: auto;
+}
+
+.wraper .pw_num td {
+    width: 10%;
+    padding: 30px 5%;
+    margin: auto;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333333;
+    vertical-align: middle;
+}
+
+.wraper .pw_num .pw_txt {
+    font-size: 15px;
+    color: #1e3259;
+    font-weight: 500;
+}
+
+.wraper .pw_num .x {
+    width: 30%;
+}
+
+/*패스워드 팝업*/
+.pw_pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    z-index: 100;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.pw_pop .pw_pop_box {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px 5px 20px 5px;
+    border-radius: 15px;
+}
+
+.pw_pop .pw_pop_box h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.pw_pop .pw_pop_box p {
+    color: #777777;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.pw_pop .pw_pop_box .no {
+    width: 43%;
+    height: 34px;
+    border-radius: 10px;
+    background: #888888;
+    color: #fff;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.pw_pop .pw_pop_box .ok {
+    width: 43%;
+    height: 34px;
+    border-radius: 10px;
+    background: #2eaded;
+    color: #fff;
+    font-size: 15px;
+}
+
+.pw_pop .pw_pop_box .ok a {
+    color: #fff;
+}
+
+
+
+
+/* snb */
+
+.menu_in {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.6);
+    display: none;
+    right: 0;
+}
+
+.menu_in .close {
+    width: 100%;
+    height: 100%;
+}
+
+.menu_in .menu_box {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -65%;
+    width: 50%;
+    max-width: 385px;
+    min-width: 160px;
+    height: 100%;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.menu_in.on .menu_box {
+    right: 0;
+}
+
+.menu_in .menu_box img {
+    width: 100%;
+}
+
+.menu_in .menu_box .menu_list {
+    padding-top: 30px;
+}
+
+.menu_in .menu_box .menu_list li {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    position: relative;
+    text-align: left;
+
+}
+
+.menu_in .menu_box .menu_list li a {
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    padding-left: 23%;
+}
+
+
+.menu_in .menu_box .menu_list li img {
+    width: 20px;
+    margin-right: 5%;
+}
+
+.menu_in .menu_box .menu_list li .bar {
+    position: absolute;
+    bottom: 17px;
+    left: 40%;
+    width: 10%;
+    height: 1px;
+    background: #50a6d2;
+}
+
+
+
+
+/*메인팝업*/
+
+.main_pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.6);
+}
+
+.main_pop .main_pop_box {
+    background: #fff;
+    width: 300px;
+    height: 195px;
+    margin: 200px auto;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.main_pop .main_pop_box .sub_box {
+    padding: 20px 10px 0 10px;
+}
+
+.main_pop .main_pop_box .pop_p1 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.main_pop .main_pop_box .pop_p1 .small {
+    color: #46b3ee;
+    font-size: 13px;
+    letter-spacing: -0.5px;
+   font-weight: 400;
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 10px;
+}
+
+
+.main_pop .main_pop_box .pop_p2 {
+    margin-top: 16px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 20px;
+    color: #1e3259;
+    line-height: 11px;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.main_pop .main_pop_box .top{
+    margin-top: 24px;
+}
+
+
+.main_pop .main_pop_box .pop_p2_sub{
+    
+}
+
+.main_pop .main_pop_box .pop_p2 .money {
+    color: #ff7539;
+    float: right;
+}
+
+.main_pop .main_pop_box .close {
+    clear: both;
+    background: #edf0f5;
+    height: 32px;
+    border-radius: 0 0 10px 10px;
+    padding: 6px 0 0 14px;
+}
+
+.main_pop .main_pop_box .close p {
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    color: #777777;
+}
+
+.main_pop .main_pop_box .close .close_btn {
+    float: right;
+    margin: 0px 10px 0 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+.close input[type="checkbox"] {
+    display: none;
+
+}
+
+.close input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    background: url('../images/check_icon_03.jpg') left top no-repeat;
+    cursor: pointer;
+    background-size: cover;
+    margin-right: 5px;
+    margin-bottom: 3px;
+
+}
+
+.close input[type=checkbox]:checked + label {
+    color: #3a3a3a;
+    ;
+}
+
+.close input[type="checkbox"]:checked + label span {
+    background: url('../images/check_icon_03.jpg') -15px top no-repeat;
+    background-size: cover;
+
+}
+
+
+
+
+
+
+
+/*메인*/
+header {
+    background: #edf0f5;
+    width: 100%;
+    height: 70px;
+}
+
+header .logo_b {
+    width: 100px;
+    margin-left: 3%;
+    margin-top: 10px;
+}
+
+header .menu {
+    width: 42px;
+    float: right;
+    margin-top: 23px;
+    padding: 11px;
+}
+
+.main_notice {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.main_notice .notice_box1 {
+    position: relative;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.notice_title {
+    position: relative;
+}
+
+.fa-chevron-down {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+
+
+
+
+.main_notice .notice_box1 span {
+    
+ 
+}
+
+.notice_title .notiseA{
+    color: #2eaded;
+    display: inline-block;
+    width: 46px;
+    border: 1px solid #2eaded;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 2px 8px;
+    display: inline-block;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.main_notice .notice_box1 h3 {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.main_notice .notice_box1 .notice_text {
+    margin-top: 13px;
+    display: none;
+}
+
+.main_notice .notice_box1 .notice_text .notice_date {
+    border: 0;
+    color: #989898;
+    margin-bottom: 4px;
+    padding: 0;
+    display: block;
+}
+
+.main_notice .notice_box1 .notice_text p {
+    color: #777777;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    display: inline-block;
+}
+
+.main_notice .notice_box1 .notice_text .more {
+    border: 0;
+    color: #1e3259;
+    font-weight: 600;
+}
+
+
+.service {
+    background: #2eaded;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-bottom: 50px;
+
+}
+
+
+.service h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 25px 0;
+}
+
+.service table {
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.service table td {
+    border: 5px solid #2eaded;
+    background: #fff;
+    border-radius: 15px;
+    height: 70px;
+    width: 50%;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.service table td a {
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    padding-top: 20px;
+    font-size: 16px;
+}
+
+.service table td img {
+    width: 36px;
+    margin-right: 11px;
+    vertical-align: middle;
+}
+
+.service table .last_door {
+    background: #1e3259;
+    color: #fff;
+    text-align: center;
+    height: 70px;
+}
+
+.service table .last_door a {
+    color: #fff;
+}
+
+.service table .last_door .door {
+    width: 28px;
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+.pp {
+    display: inline-block;
+}
+
+.new{
+    position: relative;
+}
+.new .new2{
+   position: absolute;
+    top: 23px;
+    left: 39%;
+    width: 20px; 
+}
+
+    
+
+
+/*도어락*/
+
+.wraper .back {
+    width: 10px;
+    margin-top: 32px;
+    margin-left: 3%;
+}
+
+.door_box {
+    width: 100%;
+    height: 100%;
+}
+
+.door_sub1 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.door_sub1 h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 15px 0 10px 0;
+    color: #333333;
+}
+
+.door_sub1 p {
+    font-size: 17px;
+    letter-spacing: -0.3px;
+    color: #555555;
+    line-height: 19px;
+    margin-bottom: 3px;
+}
+
+.door_sub1 .door_small_p {
+    font-size: 14px;
+    color: #ff7539;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+
+.door_sub1 button {
+    border: 0.5px solid #1e3259;
+    font-size: 14px;
+    padding: 7px 3.5%;
+    border-radius: 15px;
+    margin: 20px 0 30px 0;
+    font-weight: 400;
+}
+
+.door_sub1 button a {
+    color: #1e3259;
+}
+
+.door_sub1 button img {
+    width: 25%;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+
+
+.door_box .door_list {
+    background: #1e3259;
+    width: 94%;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.door_box .door_list h3 {
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.door_box .door_list .door_list_box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 5px 0 15px 0;
+    box-shadow: 2px 2px 2px #d7d9de;
+}
+
+.door_box .door_list .door_list_box li {
+    padding: 13px 0;
+    margin: 0 15px;
+    border-bottom: 1px solid #cad3e1;
+    text-align: left;
+}
+
+.door_box .door_list .door_list_box li:last-child {
+    border-bottom: 0;
+}
+
+.door_box .door_list .door_list_box li h4 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 3px;
+}
+
+.door_box .door_list .door_list_box li p {
+    font-size: 15px;
+    color: #656565;
+}
+
+.door_box .door_list button {
+    width: 95%;
+    height: 35px;
+    background: #e8f2ff;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #555555;
+}
+
+
+
+/*도어락 팝업*/
+.door_pop {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+
+.door_pop_box {
+    background: #fff;
+    width: 81%;
+    height: 137px;
+    margin: 200px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.door_pop_p {
+    font-size: 15px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+
+.boor_pop_btn1 {
+    background: #888888;
+    width: 45%;
+    height: 35px;
+    border-radius: 10px;
+    color: #fff;
+    margin-right: 5px;
+    font-size: 15px;
+    font-size: 15px;
+    font-size: 15p;
+    font-size: 15;
+    font-size: 1;
+}
+
+.boor_pop_btn2 {
+    background: #2eaded;
+    width: 45%;
+    height: 35px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-size: 15px;
+    font-size: 15p;
+    font-size: 15;
+    font-size: 1;
+}
+
+
+
+
+
+
+
+
+/*비밀번호 등록*/
+
+.door_body .pw_box {
+    padding-top: 0;
+}
+
+.door_body .pw_box .pw_h1 {
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.door_body .pw_box .door_small_p {
+    font-size: 15px;
+    color: #ff7539;
+    font-weight: 400;
+    line-height: 15px;
+    margin-top: 5px;
+}
+
+
+
+
+/*도어락공유*/
+.share_h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.share_p {
+    font-size: 15px;
+    text-align: center;
+    color: #555555;
+    margin: 10px 0 15px 0;
+}
+
+.share_box {
+    background: #fff;
+    width: 94%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 2px 2px 2px #d7d9de;
+}
+
+.share_box li {
+    border-bottom: 1px solid #cad3e1;
+    padding: 10px 0;
+    position: relative;
+}
+
+.share_box li p {
+    display: inline-block;
+    line-height: 16px;
+}
+
+.share_box li .share_list {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    margin-right: 5%;
+}
+
+.share_box li .share_list2 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555555;
+}
+
+.share_box li .share_span {
+    display: block;
+}
+
+.share_box li .share_span2 {
+    display: block;
+}
+
+.share_box li button {
+    border: 1px solid #1e3259;
+    width: 48px;
+    height: 24px;
+    border-radius: 15px;
+    font-size: 13px;
+    position: absolute;
+    right: 0;
+}
+
+.share_btn {
+    float: right;
+    background: #2eaded;
+    width: 50px;
+    height: 25px;
+    color: #fff;
+    border-radius: 15px;
+    margin: 15px 5% 13px 0;
+}
+
+.share_addBox {
+    background: #fff;
+    clear: both;
+    width: 94%;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.share_addBox table {
+    width: 100%;
+    height: auto;
+    padding: 15px 10px;
+    box-shadow: 2px 2px 2px #d7d9de;
+}
+
+.share_addBox table td {
+    padding: 4px 0;
+}
+
+
+.share_addBox input {
+    border: 1px solid #455576;
+    border-radius: 10px;
+    height: 35px;
+    width: 46%;
+    font-size: 14px;
+    color: #777777;
+    padding-left: 10px;
+    background: url(../images/);
+}
+
+.share_addBox .num {
+    width: 29%;
+}
+
+.share_addBox .name {
+    width: 20%;
+    font-size: 14px;
+}
+
+.share_addBox .date {
+    background: url("../images/date_03.jpg") 94% 50% no-repeat;
+    background-size: 18px;
+}
+
+.share_addBox select {
+    border: 1px solid #455576;
+    border-radius: 10px;
+    height: 35px;
+    color: #777777;
+    box-shadow: none;
+}
+
+
+
+/*커뮤니티*/
+.search_box {
+    width: 300px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 25px;
+}
+.comForm{display: inline-block; width: 74%;}
+
+.search_box .search_txt {
+    background:#cad3e1 url(../images/search_03.jpg) 95% 50% no-repeat;
+    width: 100%;
+    height: 33px;
+    border-radius: 15px;
+    background-size: 20px;
+    padding-left: 10px;
+    margin-right: 6px;
+}
+
+.search_box img {
+    width: 34px;
+    display: inline-block;
+}
+
+
+.com_list {
+    width: 95%;
+    height: auto;
+    margin: auto;
+}
+
+.com_list li {
+    position: relative;
+    border-top: 1px solid #cad3e1;
+    height: 100px;
+    padding-top: 10px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.com_list li .blue {
+    color: #2eaded;
+    font-size: 15px;
+}
+
+.com_date {
+    color: #909091;
+    font-size: 11px;
+
+}
+
+.com_list li img {
+    vertical-align: middle;
+    width: 100px;
+    float: right;
+    margin: 10px 0 0 10px;
+}
+
+.result {
+    margin: 0 0 10px 5px;
+}
+
+.result p {
+    display: inline-block;
+    font-size: 16px;
+    color: #777777;
+}
+
+.result p span {
+    color: #333333;
+}
+
+.result button {
+    float: right;
+    margin: 0 10px 0 0;
+    font-size: 15px;
+    color: #777777;
+}
+
+
+/*커뮤니티 글쓰기*/
+
+.write {
+    width: 94%;
+    margin: auto;
+}
+
+.write input {
+    background: #fff;
+    width: 100%;
+    height: 60px;
+    padding: 0 10px 25px 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: #999999;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px #d7d9de;
+}
+
+.textarea_box textarea {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    color: #999999;
+}
+
+.textarea_box {
+    width: 100%;
+    height: auto;
+    background: #1e3259;
+    border-radius: 10px;
+    text-align: right;
+
+}
+
+.textarea_box img {
+    width: 24px;
+    margin: 10px;
+
+}
+
+.write_btn {
+    background: #2eaded;
+    color: #fff;
+    width: 100%;
+    height: 37px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+
+/*커뮤니티 상세페이지*/
+.com_sub_box {
+    width: 100%;
+    margin: auto;
+    border-bottom: 2px solid #d5d8dc;
+}
+
+.sub_box2 {
+    width: 94%;
+    height: 100%;
+    margin: auto;
+}
+
+.sub_box2 .title_p {
+    font-size: 18px;
+    color: #333333;
+    line-height: 21px;
+}
+
+.sub_box2 li {
+    padding-bottom: 15px;
+}
+
+.bar2 {
+    border-top: 1px solid #cad3e1;
+    padding-top: 15px;
+}
+
+.contents {
+    margin-top: 30px;
+    line-height: 20px;
+    color: #777777;
+    font-size: 16px;
+}
+
+.comment_box {
+    width: 100%;
+    background: #fff;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+
+.comment_box .comment_box_sub {
+    width: 94%;
+    margin: auto;
+}
+
+.comment {
+    font-weight: 600;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.comment_btn {
+    color: #2eaded;
+    float: right;
+    font-size: 15px;
+}
+
+.comment_box .comment_box_sub li {
+    position: relative;
+    border-bottom: 1px solid #cad3e1;
+    padding: 15px 0 0 0;
+}
+
+
+.com_p {
+    font-size: 17px;
+    color: #555555;
+    margin-top: 10px;
+}
+
+.jjj {
+    position: absolute;
+    width: 15px;
+    right: 0;
+    top: 15px;
+}
+
+.fix {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: #edf0f5;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.fix input {
+    background: #fff;
+    ;
+    width: 75%;
+    height: 35px;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+.fix button {
+    background: #2eaded;
+    color: #fff;
+    width: 55px;
+    height: 30px;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+
+.fix_nav {
+    position: absolute;
+    background: #cfe1ff;
+    width: 45px;
+    height: 95px;
+    right: 30px;
+    bottom: 70px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+}
+
+.fix_nav li {
+    border-bottom: 1px solid #fff;
+    padding: 6px 0;
+    font-size: 12px;
+    
+}
+
+.orange {
+    color: #ff7539;
+}
+
+
+
+
+.report {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.report_box {
+    margin: 200px auto;
+    background: #fff;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.report_box ul {
+    padding: 15px 25px 15px 25px;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.report_box ul li {
+    font-size: 12px;
+    padding: 3px 0;
+    color: #777777;
+}
+
+.report_box h3 {
+    padding-top: 23px;
+}
+
+.report_box .report_pop {
+    background: #2eaded;
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+
+.report_box input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+
+
+.report_box input[type="radio"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.report_box input[type="radio"] + label:before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #383838;
+    border-radius: 100%;
+}
+
+.report_box input[type="radio"] + label:active:before,
+.report_box input[type="radio"]:checked + label:active:before {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.report_box input[type="radio"]:checked + label:before {
+    background: #fff;
+    border-color: #383838;
+}
+
+.report_box input[type="radio"]:checked + label:after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background: #2eaded;
+    border-radius: 100%;
+
+}
+
+
+/*커뮤니티 게시글/댓글*/
+.com_list2 {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.com_list2 li {
+    position: relative;
+    border-top: 1px solid #cad3e1;
+    padding: 20px 0;
+    vertical-align: middle;
+}
+
+
+
+
+.com_date {
+    color: #909091;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+
+.com_list2 li img {
+  vertical-align: middle;
+    width: 100px;
+    float: right;
+    margin-left: 10px;
+}
+
+
+.container {
+    width: 94%;
+    margin: auto;
+    text-align: center;
+}
+
+ul.tabs li {
+    width: 50%;
+    height: 35px;
+    color: #1e3259;
+    display: inline-block;
+    cursor: pointer;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    float: left;
+    padding-top: 7px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+
+.tab1 {
+    border-radius: 10px 0 0 10px;
+
+}
+
+.tab2 {
+    border-radius: 0 10px 10px 0;
+}
+
+ul.tabs li.current {
+    color: #fff;
+    background: #1e3259;
+    font-size: 16px;
+}
+
+.tab-content {
+    display: none;
+    text-align: left;
+}
+
+.tab-content.current {
+    display: inherit;
+    clear: both;
+}
+
+
+/*******************************************************/
+
+
+.checkbox {
+    float: left;
+    font-size: 15px;
+    color: #25385e;
+    margin-bottom: 7px;
+}
+
+.checkbox button {
+    color: #25385e;
+    font-size: 15px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #cad3e1;
+}
+
+.box {
+    display: inline-block;
+    width: 90%;
+}
+.com_list_box_p{
+    font-size: 17px;
+    margin: 5px 0;
+}
+
+
+
+.checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    background: url('../images/check_03.jpg') left top no-repeat;
+    cursor: pointer;
+    background-size: cover;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+.checkbox input[type="checkbox"]:checked + label span {
+    background: url('../images/check_03.jpg') -14px top no-repeat;
+    background-size: cover;
+}
+
+
+
+.com_list2 input[type="checkbox"] {
+    display: none;
+}
+
+.com_list2 input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    background: url('../images/check_03.jpg') left top no-repeat;
+    cursor: pointer;
+    background-size: cover;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    margin-top: -35px;
+}
+
+.com_list2 input[type="checkbox"]:checked + label span {
+    background: url('../images/check_03.jpg') -14px top no-repeat;
+    background-size: cover;
+}
+
+
+/*기술*/
+.skill {
+    width: 94%;
+    height: auto;
+    margin: auto;
+}
+
+.skill ul {
+    width: 100%;
+    height: auto;
+}
+
+.skill li {
+    width: 46.8%;
+    height: 130px;
+    display: inline-block;
+    background: #fff;
+    vertical-align: middle;
+    margin: 4px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #d9dce1;
+    text-align: center;
+}
+
+.skill li img {
+    width: 50px;
+    margin: 30px 0 10px 0;
+}
+
+.skill li a {
+    display: inline-block;
+    width: 100%;
+    height: 130px;
+}
+
+.skill_btn {
+    position: relative;
+    background: #1e3259;
+    width: 100%;
+    height: 40px;
+    margin-top: 8px;
+    border-radius: 10px;
+    text-align: left;
+    color: #fff;
+    padding-left: 10px;
+}
+
+
+.skill_btn img {
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    width: 10px;
+}
+
+
+.skill_sub1 {
+    width: 94%;
+    margin: auto;
+}
+
+.skill_select {
+    width: 100%;
+    background: #fff;
+}
+
+
+
+
+
+
+/*기술지원글쓰기*/
+select {
+    width: 100%;
+    height: 40px;
+    background: #fff url('../images/row_06.jpg') no-repeat 95% 50%;
+    background-size: 11px;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-left: 10px;
+    box-shadow: 2px 2px 2px #d7d9de;
+    color: #777777;
+    font-size: 16px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+
+
+
+.skill_sub1 input {
+    background: #fff;
+    width: 100%;
+    height: 60px;
+    padding: 0 10px 25px 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: #999999;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px #d7d9de;
+}
+
+.skill_text {
+    background: #fff;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #d7d9de;
+    font-size: 15px;
+}
+
+.file {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    height: 35px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #d7d9de;
+    margin: 10px 0;
+    text-align: left;
+    padding: 8px 0 0 10px;
+    color: #1e3259;
+    font-size: 15px;
+}
+
+.file img {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    width: 10px;
+}
+
+.skill_sub_btn {
+    width: 100%;
+    background: #1e3259;
+    height: 37px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.write_btn a {
+    color: #fff;
+}
+
+
+
+/*내가요청한 기술지원*/
+.skill_my_box {
+    width: 94%;
+    height: auto;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #d7d9de;
+}
+
+.skill_my_box ul {
+    width: 94%;
+    margin: auto;
+}
+
+.skill_my_box li h4 {
+    display: inline-block;
+    color: #333333;
+    font-weight: 500;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.skill_my_box li p {
+    display: inline-block;
+    color: #777777;
+    font-size: 16px;
+}
+
+.skill_my_box li .my_box2 {
+    display: inline-block;
+    float: right;
+    background: #ff7539;
+    color: #fff;
+    width: 63px;
+    height: 25px;
+    text-align: center;
+    padding-top: 4px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.skill_my_box li .my_box {
+    display: inline-block;
+    float: right;
+    background: #2eaded;
+    color: #fff;
+    width: 63px;
+    height: 25px;
+    text-align: center;
+    padding-top: 4px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.skill_my_box li .my_box {
+    display: inline-block;
+}
+
+.skill_my_box li a {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+}
+
+.skill_my_box li {
+    border-bottom: 1px solid #cad3e1;
+    padding-top: 25px;
+}
+
+
+/*내가요청한 기술지원 상세페이지*/
+.skill_my_sub {
+    width: 94%;
+    margin: auto;
+
+}
+
+.my_sub1 {
+    text-align: center;
+    color: #2eaded;
+    font-size: 15px;
+}
+
+.my_sub2 {
+    text-align: center;
+    color: #ff7539;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.my_sub_title {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 0 0 10px;
+    margin-top: 10px;
+    color: #333333;
+    box-shadow: 2px 2px 2px #d7d9de;
+    font-size: 16px;
+}
+
+.my_sub_con {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #d7d9de;
+    margin-top: 10px;
+    padding: 10px;
+    line-height: 25px;
+    color: #777777;
+    font-size: 15px;
+}
+
+.my_sub_file {
+    margin: auto;
+    width: 95%;
+    border-top: 1px solid #cad3e1;
+    margin-top: 35px;
+    padding-top: 8px;
+    color: #1e3259;
+}
+
+
+
+
+/*관리비*/
+.maintenance {
+    width: 94%;
+    margin: auto;
+    text-align: center;
+}
+
+.maintenance h2 {
+    width: 250px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+    color: #1e3259;
+    text-align: left;
+    margin: 10px auto;
+}
+
+.maintenance h2:first-child{margin-top: 0;}
+
+.subP{
+    margin: 20px 0;
+    font-size: 17px;
+}
+
+.fee_money {
+    color: #ff7539;
+    float: right;
+}
+
+
+
+
+.tabs2 li {
+    width: 33%;
+    height: 35px;
+    color: #1e3259;
+    display: inline-block;
+    cursor: pointer;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    float: left;
+    padding-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.tab2_1 {
+    border-radius: 10px 0 0 10px;
+    border-right: 1px solid #cad3e1;
+}
+
+.tab2_3 {
+    border-radius: 0 10px 10px 0;
+    border-left: 1px solid #cad3e1;
+}
+
+ul.tabs2 li.current {
+    color: #fff;
+    background: #1e3259;
+
+}
+
+.tabs2::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.mian2_selBox{
+    width: 94%;
+    margin: auto;
+}
+.main2_sel1{
+    width: 59%;
+    display: inline-block;
+    
+}
+.main2_sel2{
+    width: 39%;
+    display: inline-block;
+    float: right;
+}
+
+.main2_box{
+    clear: both;
+    width: 94%;
+    margin: auto;
+    background: #1e3259;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.main2_box h2{
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding: 17px 0 10px 0;
+}
+
+.more{display: none;}
+
+
+
+
+
+
+
+
+
+
+
+.fee {
+    clear: both;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.fee li {
+    position: relative;
+    padding: 10px 0;
+    border-top: 1px solid #cad3e1;
+}
+
+.fee li:first-child {
+    border-top: 0;
+}
+
+.fee li h3 {
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 6%;
+    vertical-align: top;
+}
+
+.fee li p {
+    display: inline-block;
+    color: #777777;
+    font-size: 16px;
+}
+
+.fee li button {
+    position: absolute;
+    right: 0;
+    width: 47px;
+    height: 23px;
+    border-radius: 15px;
+    font-size: 14px;
+    background: #2eaded;
+    color: #fff;
+}
+
+.fee_span {
+    color: #2eaded;
+    display: block;
+}
+
+.fee_span2 {
+    display: block
+}
+
+.fee_btn {
+    width: 100%;
+    background: #e8f2ff;
+    height: 35px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #555555;
+}
+
+.fee_sub {
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+    background: #1e3259;
+    border-radius: 10px;
+}
+
+.fee_sub h3 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 15px 0;
+}
+
+.fee_sub1_box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.fee_sub1_box ul li {
+    text-align: left;
+    border-top: 1px solid #cad3e1;
+    padding: 10px 0;
+}
+
+.fee_sub1_box ul li:first-child {
+    border-top: 0;
+}
+
+.fee_sub1_box h4 {
+    color: #333333;
+    font-size: 19px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.fee_sub1_box p {
+    color: #555555;
+    font-size: 16px;
+}
+
+
+.ornageTop{
+    display: inline-block;
+    margin-top: 5px;
+}
+
+
+
+/*알림*/
+.fa-chevron-down {
+    transform: rotate(0);
+
+}
+
+.fa-chevron-down.open {
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+.notify {
+    width: 94%;
+    margin: auto;
+}
+
+.type {
+    font-size: 16px;
+    color: #2eaded;
+}
+
+
+.type2 {
+    font-size: 16px;
+    color: #ff7539;
+}
+
+.notify .notify_title h3 {
+    position: relative;
+    font-size: 18px;
+    color: #333333;
+    margin: 5px 0;
+}
+
+.notify .notify_title p {
+    font-size: 16px;
+    color: #888888;
+}
+
+.notify_txt {
+    color: #777777;
+    font-size: 17px;
+    display: none;
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+.notify li {
+    border-bottom: 1px solid #cad3e1;
+    padding: 10px 0;
+}
+
+
+
+
+/*인큐랩찾기*/
+
+
+.map {
+    position: relative;
+}
+
+.example-right {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    padding: 4px;
+    margin: 0;
+    color: #fff;
+    font-size: 10px;
+    background: #e85312;
+    /* default background for browsers without gradient support */
+    /* css3 */
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#e85312), to(#e85312));
+    background: -moz-linear-gradient(#e85312, #e85312);
+    background: -o-linear-gradient(#e85312, #e85312);
+    background: linear-gradient(#e85312, #e85312);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #969696;
+}
+
+.example-right + p {
+    margin: 15px 0 2em 85px;
+
+}
+
+/* creates the triangle */
+.example-right:after {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    right: 5px;
+    border-width: 0 10px 17px 0px;
+    border-style: solid;
+    border-color: transparent #e85312;
+    /* reduce the damage in FF3.0 */
+    display: block;
+    width: 0;
+}
+
+.map_top {
+    position: absolute;
+    top: 10px;
+    right: 010px;
+    ;
+}
+
+
+/* IE9 이하를 위한 css */
+.map_top .placeholder {
+    color: #2eaded;
+    font-size: 12px;
+
+}
+
+/* IE10 이상을 위한 css */
+.map_top input::placeholder {
+    color: #2eaded;
+    opacity: 1;
+    font-size: 12px;
+    /* 파이어폭스에서 뿌옇게 나오는 현상을 방지하기 위한 css */
+}
+
+.map_top input::-webkit-input-placeholder {
+    color: #2eaded;
+    font-size: 12px;
+}
+
+/* IE */
+.map_top input:-ms-input-placeholder {
+    color: #2eaded;
+    font-size: 12px;
+}
+
+/* Firefox */
+.map_top input:-mos-input-placeholder {
+    color: #2eaded;
+    font-size: 12px;
+}
+
+
+
+.map_top input[type="text"] {
+    border: 1px solid #2eaded;
+    border-radius: 15px;
+    width: 100px;
+    height: 25px;
+    padding-left: 25px;
+    background: #edf0f5 url(../images/search_04_03.jpg)7% no-repeat;
+    background-size: 15px;
+
+}
+
+
+.sub1 input[type="checkbox"] {
+    display: none;
+}
+
+.sub1 input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 19.5px;
+    height: 18px;
+    vertical-align: middle;
+    background: url('../images/icon2_03.png') left top no-repeat;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.sub1 input[type="checkbox"]:checked + label span {
+    background: url('../images/icon2_03.png') -20px top no-repeat;
+    background-size: cover;
+}
+
+.map_sub {
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    line-height: 21px;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+
+
+.map_sub h2 {
+    font-size: 16px;
+    color: #333333;
+    display: inline-block;
+}
+
+.map_sub p {
+    color: #777777;
+    font-size: 15px;
+}
+
+.sub_num {
+    color: #46b3ee;
+}
+
+.heart_box {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+}
+
+.heart_box2 {
+    display: inline-block;
+    margin-left: 3px;
+}
+
+
+
+/*인큐랩 찾기 상세*/
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.swiper-slide img {
+    box-shadow: 2px 2px 2px #d4d6da;
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+.sub1 {
+    width: 100%;
+
+}
+
+.find_img {
+    width: 100%;
+}
+
+.find_img li {
+    width: 80%;
+    margin: auto;
+}
+
+.find_img li img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.find_box {
+    width: 80%;
+    margin: auto;
+}
+
+.find_box::before{content: ''; clear: both; display: block;}
+
+.find_box p {
+    color: #777777;
+    font-size: 16px;
+}
+
+.sub1_p2 {
+    margin-bottom: 3px;
+    color: #777777;
+    font-size: 16px;
+}
+
+.find_box .sub1_p1 {
+    margin-bottom: 5px;
+    color: #333333;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.name2 {
+    font-size: 21px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 9px;
+}
+
+.find_box table {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+}
+
+
+
+.find_box table td {
+    border-bottom: 1px solid #aaaaaa;
+    padding: 5px 0 5px 0;
+    color: #555555;
+    font-size: 15px;
+}
+
+.find_box table .tt {
+    border-bottom: 0;
+}
+
+.color {
+    background: #fff;
+    border-left: 1px solid #aaaaaa;
+}
+
+
+
+.color2 {
+    background: #fff;
+}
+
+.color2 .o {
+    color: #2eaded;
+}
+
+.find_tb td {
+    border-left: 1px solid #aaaaaa;
+}
+
+.find_tb td:first-child {
+    border-left: 0;
+}
+
+.find_btn {
+    width: 100%;
+    height: 37px;
+    margin-top: 15px;
+    background: #1e3259;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+
+
+
+/*계약하기 상세페이지*/
+.menu1_find_sub2 {
+    width: 94%;
+    margin: auto;
+}
+
+.find_map_btn {
+    background: #2eaded;
+    color: #fff;
+    font-size: 14px;
+    width: 69px;
+    height: 23px;
+    border-radius: 15px;
+}
+
+
+.sub2_p {
+    color: #333333;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.sub2_box1 {
+    width: 100%;
+    margin-top: 13px;
+}
+
+.sub2_box1 ul {
+    margin: auto;
+    width: 100%;
+}
+
+.sub2_box1 li {
+    display: inline-block;
+}
+
+.sub2_box1 .in_li2 {
+    margin: 0.5%;
+}
+
+.sub2_box1 .in_li {
+    width: 47.16%;
+    border-radius: 10px;
+}
+
+.sub2_input {
+    background: #fff url("../images/date_03.jpg") 94% 50% no-repeat;
+    background-size: 18px;
+    height: 35px;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 10px;
+    color: #777777;
+    box-shadow: 2px 2px 2px #d7d9de;
+}
+
+.menu2_signBox{
+    margin-top: 20px;
+}
+
+.menu2_signBox .singP{
+    display: inline-block;
+    font-size: 16px;
+}
+
+.righ_sign{
+    display: inline-block;
+    font-size: 15px;
+    float: right;
+}
+
+.orange_btn{
+    background: #ff7439;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 16px;
+}
+
+.righ_sign2 {
+    display: none;
+    font-size: 15px;
+    float: right;
+}
+.orange_btn2 {
+    background: #777777;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 15px;
+}
+
+
+.sub2_box2 {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.sub2_box2 ul {
+    margin: auto;
+}
+
+.sub2_box2 li {
+    display: inline-block;
+    width: 47.16%;
+}
+
+.sub2_box2 li:first-child {
+    margin-right: 4.6543%;
+}
+
+.sub2_box2 li select {
+    width: 100%;
+}
+
+
+.sub2_box3 {
+    margin-top: 20px;
+}
+
+.flot {
+    display: inline-block;
+}
+
+.sub2_box3_p {
+    display: inline-block;
+    float: right;
+}
+
+.sub2_p2 {
+    color: #ff7539;
+    font-size: 13px;
+}
+
+.sign {
+    background: #ff7539;
+    width: 70px;
+    height: 23px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+.sign a {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.sub2_box4 {
+    margin-top: 10px;
+}
+
+.sub2_box5 {
+    margin-top: 20px;
+}
+
+.sub2_box5 h3 {
+    color: #2eaded;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.sub2_box5_div2 {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    color: #555555;
+    font-size: 12px;
+}
+
+.sub2_box5_div2 p{
+    font-size: 14px;
+}
+
+.find_btn2 {
+    width: 100%;
+    height: 38px;
+    margin-top: 15px;
+    background: #888888;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.map2 {
+    display: none;
+}
+
+
+
+/*계약관리*/
+.menu2_contract {
+    width: 94%;
+    margin: auto;
+}
+
+.menu2_contract li {
+    position: relative;
+    padding: 13px 0;
+    line-height: 20px;
+    border-bottom: 1px solid #cad3e1;
+}
+
+.con_btn2,
+.con_btn3,
+.con_btn4,
+.contract_btn2 {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.menu2_con_btn {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+}
+
+.con_btn2 {
+    display: inline-block;
+    background: #34466a;
+    border-radius: 15px;
+    width: 90px;
+    line-height: 30px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+.con_btn3 {
+    background: #2eaded;
+    border-radius: 15px;
+    width: 77px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.con_btn4 {
+    display: inline-block;
+    text-align: center;
+    background: #ff7539;
+    width: 50px;
+    line-height: 25px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.con_btn5 {
+    border: 1px solid #1e3259;
+    border-radius: 15px;
+    width: 40px;
+}
+
+.con_btn6 {
+    display: inline-block;
+    border: 1px solid #1e3259;
+    border-radius: 15px;
+    width: 116px;
+    line-height: 24px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.contract_btn2 {
+    width: 100%;
+    height: 40px;
+    background: #1e3259;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+
+
+/*계약연장 상세페이지*/
+
+.menu2_sub2_p {
+    margin: 15px 0;
+    color: #333333;
+    line-height: 21px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.menu2_sub2_tb {
+    width: 100%;
+    border-top: 1px solid #333333;
+}
+
+.menu2_sub2_tb table {
+    width: 100%;
+    text-align: center;
+    background: #fff;
+}
+
+.menu2_sub2_tb th {
+    color: #555555;
+    background: #e4e9f0;
+    padding: 10px 0;
+}
+
+.sub_th {
+    color: #777777;
+}
+
+.menu2_sub2_tb th {
+    border-right: 1px solid #aaaaaa;
+    font-size: 16px;
+}
+
+.menu2_sub2_tb th:last-child {
+    border-right: 0;
+}
+
+.menu2_sub2_tb td {
+    border-bottom: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.menu2_sub2_tb td:last-child {
+    border-right: 0;
+    font-size: 16px;
+}
+
+.menu2_sub2_tb tr {}
+
+
+
+.border {
+    text-align: left;
+}
+
+.menu2_sub2_date {
+    color: #ff7539;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.menu2_sub2_date2 {
+    color: #2eaded;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.menu2_orange {
+    color: #ff7539;
+    font-weight: 500;
+}
+
+.menu2_blue {
+    color: #2eaded;
+    font-weight: 500;
+}
+
+
+/*건의사항 상세페이지*/
+.qna_sub_sel {
+    margin: 15px 0;
+}
+
+.qna_sub_p {
+    text-align: center;
+    font-size: 15px;
+    color: #333333;
+    letter-spacing: -0.6px;
+    margin-bottom: 15px;
+    line-height: 23px;
+}
+
+
+
+/*설정*/
+/*on,off*/
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 41px;
+    height: 23px;
+    vertical-align: middle;
+    float: right;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    display: none;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 21px;
+    width: 21px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+.menu4_box {
+    width: 94%;
+    margin: auto;
+}
+
+.menu4_box h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.menu4_box p {
+    display: inline-block;
+    color: #777777;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+.menu4_my_box1 {
+    margin-bottom: 20px;
+}
+
+.menu4_my_box1 li {
+    position: relative;
+    padding: 11px 0;
+    font-size: 16px;
+}
+
+.menu4_my_box1 li a {
+    width: 100%;
+    height: 100%;
+}
+
+.my_right {
+    position: absolute;
+    right: 0;
+    font-size: 15px;
+}
+
+.go {
+    width: 9px;
+    margin: 2px 0 0 10px;
+}
+
+
+/*내정보 수정*/
+.menu4_my_sub1 {
+    width: 94%;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #d7d9de;
+    padding: 5px 15px;
+}
+
+.menu4_my_sub1 li {
+    border-bottom: 1px solid #cad3e1;
+    padding: 10px 0;
+}
+
+.menu4_my_sub1 li:last-child {
+    border-bottom: 0;
+}
+
+.menu4_my_sub1 li p {
+    display: inline-block;
+    font-size: 17px;
+}
+
+.menu4_my_sub1_title {
+    width: 31%;
+    color: #333333;
+}
+
+.menu4_my_sub1_inP {
+    color: #777777;
+}
+
+.my_sub1_btn {
+    float: right;
+    background: #2eaded;
+    width: 47px;
+    height: 25px;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.my_sub1_btn2 {
+    float: right;
+    background: #2eaded;
+    width: 47px;
+    height: 25px;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 15px;
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    color: #333333;
+    font-size: 15px;
+}
+
+.footer_blue {
+    color: #2eaded;
+}
+
+
+/*팝업창*/
+.pop1 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+
+.my_pop_name {
+    background: #fff;
+    width: 90%;
+    height: 166px;
+    margin: 150px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.pop_h1 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.my_pop_name input {
+    background: #edf0f5;
+    width: 100%;
+    height: 32px;
+    border-radius: 7px;
+    text-align: center;
+    margin: 12px 0 10px 0;
+}
+
+.pop_orange {
+    font-size: 15px;
+    color: #ff7539;
+    margin-bottom: 12px;
+}
+
+.my_pop_btn1 {
+    background: #888888;
+    width: 47%;
+    height: 35px;
+    border-radius: 10px;
+    color: #fff;
+    margin-right: 7px;
+    font-size: 16px;
+}
+
+.my_pop_btn2 {
+    background: #2eaded;
+    width: 47%;
+    height: 35px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+.pop2 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+
+.my_pop_mail {
+    background: #fff;
+    width: 90%;
+    height: 150px;
+    margin: 150px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.pop2 li {
+    display: inline-block;
+    color: #8b9bb9;
+}
+
+.pop_li {
+    width: 46%;
+}
+
+.pop2 ul {
+    margin: 10px 0 15px 0;
+}
+
+.pop2 li input {
+    background: #edf0f5;
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    color: #656565;
+}
+
+.pop2 li select {
+    width: 100%;
+    height: 35px;
+    background: #edf0f5 url("../images/ddd_03.png") 95% 55% no-repeat;
+    background-size: 12px;
+    font-size: 15px;
+    box-shadow: none;
+}
+
+.pop3 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.my_pop_pw {
+    background: #fff;
+    width: 230px;
+    height: 100px;
+    margin: 150px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.my_pop_pw .my_pop_btn2 {
+    margin-top: 12px;
+}
+
+
+
+/*기업정보*/
+.menu4_img {
+    width: 30%;
+}
+
+.menu4_logo {
+    width: 50%;
+    display: inline-block;
+}
+
+.menu4_sub2_btn {
+    background: #2eaded;
+    color: #fff;
+    width: 45px;
+    height: 24px;
+    border-radius: 15px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.body2 {
+    width: 100vw;
+    height: 100vh;
+    background: #edf0f5;
+}
+
+.pw_box2 {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 0;
+    text-align: center;
+}
+
+.pw_btn2 {
+    border: 1px solid #1e3259;
+    border-radius: 15px;
+    width: 60px;
+    height: 30px;
+    color: #1e3259;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.pw_btn3 {
+    border: 1px solid #1e3259;
+    border-radius: 15px;
+    width: 60px;
+    height: 30px;
+    color: #1e3259;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+
+/*인큐랩찾기 계약서*/
+
+.menu1_find_sub3 {
+    width: 94%;
+    margin: auto;
+}
+
+.menu1_find_sub3 p {
+    color: #777777;
+    font-size: 15px;
+}
+
+.menu1_find_sub3 table {
+    background: #fff;
+    vertical-align: middle;
+    color: #555555;
+}
+
+.menu1_find_sub3 h3 {
+    font-size: 17px;
+    color: #333333;
+    margin: 15px 0 10px 0;
+}
+
+.menu1_find_sub3 table input {
+    width: 100%;
+}
+
+.menu1_find_sub3 th {
+    background: #e4e9f0;
+    width: 20%;
+    vertical-align: middle;
+    border-bottom: 1px solid #aaaaaa;
+    font-size: 15px;
+}
+
+.menu1_find_sub3 td {
+    vertical-align: middle;
+    border-bottom: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
+    font-size: 14px;
+    padding: 4px 0 4px 2px;
+}
+
+
+.find3_tb1 {
+    width: 100%;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    text-align: center;
+}
+
+.find3_tb2 {
+    width: 100%;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+}
+
+.find3_tb3 {
+    width: 100%;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.find3_tb1 .td, .find3_tb2 .td, .find3_tb3 .td {
+    border-bottom: 0;
+}
+
+.find3_tb1 td:last-child {
+    border-right: 0;
+}
+
+.find3_tb2 td:last-child {
+    border-right: 0;
+}
+
+.find3_tb3 td:last-child {
+    border-right: 0;
+}
+
+.find3_tb3 tr .last_td {
+    border-right: 1px solid #aaaaaa;
+}
+
+input.qq{
+    border-bottom: 1px solid #ababab;
+}
+
+.menu1_find_sub3 table input.sub3input1{
+    width: 100px;
+}
+
+.menu1_find_sub3 table input.sub3input2{
+    width: 30px;
+}
+
+.find3_tb2 td{line-height: 25px;}
+
+input.subdate{
+    width: 32px;
+    border-bottom: 1px solid #ababab;
+    text-align: center;
+}
+
+.sgin {
+    width: 21px;
+    display: block;
+    margin: auto;
+
+}
+
+.find3_tb3 .sgin_box {
+    width: 10%;
+    text-align: center;
+    color: #aaaaaa;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.find_sub3_btn {
+    width: 100%;
+    height: 35px;
+    background: #1e3259;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/*서명팝업*/
+.find_pop {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+
+.find_pop_inBox {
+    background: #fff;
+    width: 80%;
+    height: 165px;
+    margin: 200px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.inBox {
+    width: 100%;
+    margin: auto;
+}
+
+.sign_backImg {
+    width: 100%;
+    height: 106px;
+    background: url(../images/sgin2_03.jpg) center center no-repeat;
+    background-size: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.sign_ok {
+    background: #2dadec;
+    width: 49%;
+    height: 30px;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.sign_no {
+    background: #888888;
+    width: 49%;
+    height: 30px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+textarea{
+        padding: 10px;
+    }
+
+
+
+
+
+@media (min-width: 768px) {
+
+    /*인트로*/
+
+
+    .login .login_box {
+        padding-top: 100px;
+    }
+
+    .login .login_box input {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .login .login_box .login_btn1 {
+        height: 50px;
+        font-size: 16px;
+    }
+
+
+    .login .login_box .time {
+        bottom: 95px;
+        font-size: 15px;
+    }
+
+    .login .login_box .login_btn2 {
+        height: 50px;
+    }
+
+    .login .error {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 22px;
+    }
+
+    .login .error .bold {
+        font-weight: 400;
+    }
+
+    .login .error .error_btn {
+        height: 50px;
+        font-weight: 500;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+
+    .pw_box {
+        padding-top: 100px;
+    }
+
+    .pw_h1 {
+        font-size: 17px;
+        margin: 30px 0;
+    }
+
+    .pw_btn {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .wraper .pw_num td {
+        width: 10%;
+        height: 100px;
+        margin: auto;
+        font-size: 28px;
+    }
+
+    .wraper .pw_num .pw_txt {
+        font-size: 20px;
+    }
+
+    .wraper .pw_num .x {
+        width: 24%;
+    }
+
+    .pw_pop .pw_pop_box {
+        width: 60%;
+    }
+
+    .pw_pop .pw_pop_box h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .pw_pop .pw_pop_box p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        line-height: 23px;
+    }
+
+    .pw_pop .pw_pop_box .no {
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .pw_pop .pw_pop_box .ok {
+        height: 40px;
+        font-size: 17px;
+    }
+
+    header {
+        height: 95px;
+    }
+
+    header .logo_b {
+        width: 16%;
+        margin-top: 20px;
+    }
+
+    .main_notice {
+        margin-bottom: 20px;
+    }
+
+    .main_notice .notice_box1 {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .main_pop .main_pop_box {
+        width: 50%;
+        height: 210px;
+    }
+
+    .main_pop .main_pop_box .pop_p1 {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+
+    .main_pop .main_pop_box .pop_p1 .small {
+        font-size: 13px;
+        letter-spacing: 0;
+    }
+
+    .main_pop .main_pop_box .sub_box {
+        padding: 30px 10px 0 10px;
+    }
+
+    .main_pop .main_pop_box .pop_p2 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 21px;
+    }
+
+    .main_pop .main_pop_box .close {
+        background: #edf0f5;
+        height: 35px;
+        border-radius: 0 0 10px 10px;
+        padding: 6px 0 0 14px;
+    }
+
+
+    .main_pop .main_pop_box .close p .ppp{
+        font-size: 15px;
+    }
+
+    .main_pop .main_pop_box .close .close_btn {
+        margin: 0px 10px 0 0;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+
+    .main_notice .notice_box1 h3 {
+        font-size: 19px;
+        font-weight: 400;
+        letter-spacing: 0;
+    }
+
+    .main_notice .notice_box1 span {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+
+    .main_notice .notice_box1 .notice_text .notice_date {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .main_notice .notice_box1 .notice_text p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .service h2 {
+        font-size: 22px;
+        padding: 35px 0;
+    }
+
+    .service table td a {
+        height: 120px;
+        padding-top: 34px;
+        font-size: 18px;
+    }
+
+    .service table td img {
+        width: 14%;
+        margin-right: 20px;
+    }
+
+    .service table .last_door .door {
+        width: 7%;
+        margin-left: 0;
+        margin-right: 8px;
+    }
+
+    header .menu {
+        width: 50px;
+        float: right;
+        margin-right: 3%;
+        margin-top: 50px;
+    }
+
+    .menu_in .menu_box .menu_list {
+        padding-top: 40px;
+    }
+
+    .menu_in .menu_box .menu_list li {
+        height: 85px;
+        font-size: 22px;
+
+    }
+
+    .menu_in .menu_box .menu_list li a {
+        height: 85px;
+        padding-left: 27%;
+    }
+
+    .menu_in .menu_box .menu_list li .bar {
+        position: absolute;
+        bottom: 37px;
+        left: 42%;
+        width: 10%;
+        height: 1px;
+        background: #50a6d2;
+    }
+
+    .menu_in .menu_box .menu_list li img {
+        width: 10%;
+            margin-right: 8%;
+            margin-top: 0px;
+    }
+
+    .wraper .back {
+        width: 15px;
+        margin-top: 45px;
+        margin-left: 3%;
+    }
+
+    .sub_box2 .title_p {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .com_date {
+        font-size: 17px;
+    }
+
+    .bar2 img {
+        width: 100%;
+    }
+
+    .contents {
+        line-height: 25px;
+        font-size: 17px;
+    }
+
+    .comment {
+        font-size: 18px;
+    }
+
+    .comment_btn {
+        font-size: 18px;
+    }
+
+    .com_p {
+        font-size: 16px;
+        margin-top: 10px;
+        line-height: 20px;
+    }
+
+    .jjj {
+        top: 30px;
+    }
+
+    .fix_nav li {
+        padding: 10px 0;
+        font-size: 18px;
+    }
+
+    .fix_nav {
+        width: 60px;
+        height: 120px;
+    }
+
+    .fix button {
+        width: 65px;
+        height: 35px;
+        font-size: 17px;
+    }
+
+    .search_box {
+        width: 750px;
+        text-align: center;
+    }
+
+    .search_box .search_txt {
+        width: 50%;
+        height: 40px;
+    }
+
+    .search {
+        position: absolute;
+        top: 5px;
+        right: 250px;
+        width: 28px;
+    }
+
+    .search_box img {
+        width: 40px;
+        display: inline-block;
+    }
+    
+    .com_list li {
+    height: 120px;
+}
+
+
+    .com_list li .blue {
+        font-size: 16px;
+    }
+
+    .com_list .com_p {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    .com_list li img {
+        width: 120px;
+    }
+
+
+    ul.tabs li {
+        width: 50%;
+        height: 45px;
+        padding-top: 11px;
+        margin-bottom: 30px;
+        font-size: 19px;
+    }
+
+    .checkbox {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .checkbox button {
+        font-size: 17px;
+    }
+
+    .checkbox input[type="checkbox"] + label span {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        background: url('../images/check_03.jpg') left top no-repeat;
+        cursor: pointer;
+        background-size: cover;
+        margin-right: 7px;
+        margin-bottom: 2px;
+    }
+
+    .checkbox input[type="checkbox"]:checked + label span {
+        background: url('../images/check_03.jpg') -18px top no-repeat;
+        background-size: cover;
+    }
+
+
+
+    .com_list2 input[type="checkbox"] {
+        display: none;
+    }
+
+    .com_list2 input[type="checkbox"] + label span {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        background: url('../images/check_03.jpg') left top no-repeat;
+        cursor: pointer;
+        background-size: cover;
+        margin-right: 10px;
+        margin-bottom: 2px;
+        margin-top: -35px;
+    }
+
+    .com_list2 input[type="checkbox"]:checked + label span {
+        background: url('../images/check_03.jpg') -18px top no-repeat;
+        background-size: cover;
+    }
+
+    .com_list2 p {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .result p {
+        font-size: 16px;
+    }
+
+    .result button {
+        font-size: 16px;
+    }
+
+    .com_list p {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .write input {
+        padding: 10px 10px 25px 10px;
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .textarea_box img {
+        width: 30px;
+    }
+
+
+    .write_btn {
+        height: 45px;
+        margin-top: 15px;
+        font-weight: 300;
+        font-size: 18px;
+    }
+
+    .door_sub1 h2 {
+        font-size: 25px;
+        margin: 30px 0 20px 0;
+    }
+
+    .door_sub1 p {
+        font-size: 20px;
+        letter-spacing: 0;
+        line-height: 40px;
+    }
+
+    .door_sub1 .door_small_p {
+        font-size: 16px;
+        font-weight: lighter;
+        line-height: 19px;
+    }
+
+
+    .door_sub1 button {
+        font-size: 16px;
+        padding: 10px 6%;
+        margin: 30px 0 40px 0;
+        margin-right: 5px;
+    }
+    
+    .door_sub1 button img {
+    width: 29%;
+    margin-right: 7px;
+        margin-top: 2px;
+}
+
+    .door_box .door_list h3 {
+        font-size: 20px;
+        font-weight: 400;
+        padding: 20px 0;
+    }
+
+    .door_box .door_list .door_list_box li h4 {
+        font-size: 18px;
+        margin-bottom: 7px;
+    }
+
+    .door_box .door_list .door_list_box li p {
+        font-size: 16px;
+    }
+
+    .door_box .door_list button {
+        height: 45px;
+        font-size: 17px;
+    }
+
+    .door_body .pw_box .pw_h1 {
+        margin-bottom: 50px;
+        font-weight: 500;
+        font-size: 23px;
+    }
+
+    .pw_circle li {
+        width: 30px;
+        height: 30px;
+    }
+
+    .door_body .pw_box .door_small_p {
+        font-size: 17px;
+        margin-top: 20px;
+    }
+
+    .share_h2 {
+        font-size: 23px;
+    }
+
+
+    .share_p {
+        font-size: 15px;
+        margin: 15px 0 20px 0;
+    }
+
+    .share_box li {
+        padding: 25px 0;
+    }
+
+    .share_box li .share_list {
+        font-size: 16px;
+    }
+
+    .share_box li .share_list2 {
+        font-size: 16px;
+    }
+    .share_addBox table td {
+    padding: 10px 0;
+}
+
+    .share_addBox input {
+        font-size: 16px;
+        height: 40px;
+    }
+    .share_addBox .num {
+    width: 30.5%;
+        height: 40px;
+}
+
+    .share_addBox .name {
+        font-size: 15px;
+        padding-left: 10px;
+    }
+
+    .share_box li .share_span {
+        display: inline-block;
+    }
+
+    .share_box li .share_span2 {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .door_pop_box {
+        width: 50%;
+        ;
+        height: 140px;
+    }
+
+    .door_pop_p {
+        font-size: 15px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        line-height: 23px;
+    }
+
+    .maintenance h2 {
+        font-size: 23px;
+    }
+
+    .tabs2 li {
+        height: 45px;
+        padding-top: 10px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .fee li {
+        height: 50px;
+        vertical-align: middle;
+    }
+
+    .fee li h3 {
+        font-size: 18px;
+        margin-right: 5%;
+    }
+
+    .fee_span {
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    .fee_span2 {
+        display: inline-block;
+    }
+
+    .fee li p {
+        font-size: 18px;
+    }
+
+    .fee li button {
+        width: 55px;
+        height: 25px;
+        font-size: 14px;
+    }
+    .fee_sub1_box h4 {
+    font-size: 20px;
+}
+    .fee_btn {
+    height: 45px;
+    font-size: 17px;
+}
+    .fee_sub1_box button {
+    /* height: 33px; */
+    /* font-size: 16px; */
+    margin-top: 10px;
+}
+
+
+.swiper-container {
+    height: 410px;
+}
+    .fee_sub1_box p {
+    font-size: 17px;
+    margin-top: 7px;
+}
+.name2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.find_box p {
+    font-size: 17px;
+    line-height: 25px;
+}
+
+.find_box table td {
+    padding: 10px 0;
+    font-size: 17px;
+}
+    .find_btn{
+        height: 45px;
+    }
+.find_btn a {
+    height: 45px;
+    padding-top: 12px;
+    font-size: 16px;
+    font-weight: 400;
+}
+    .sub2_box1 .in_li2 {
+    margin: 1.5%;
+}
+.sub1_p2 {
+   font-size: 17px;
+   line-height: 23px;
+}
+.sub2_p {
+    font-size: 19px;
+    margin-bottom: 13px;
+}
+
+.sub2_input {
+  font-size: 18px;
+    height: 45px;
+}
+
+.sub2_box2 li select {
+    font-size: 18px;
+    
+    height: 45px;
+}
+.sub2_p2 {
+    font-size: 15px;
+}
+    .sign {
+    width: 80px;
+    height: 26px;
+}
+    .sign a {
+     font-size: 15px;
+    font-weight: 100;
+}
+
+.sub2_box5 h3 {
+    font-size: 14px;
+}
+    .find_btn2 {
+        height: 45px;
+    }
+.find_btn2 a {
+    height: 45px;
+    padding-top: 12px;
+    font-size: 16px;
+}
+    
+    .menu1_find_sub3 p {
+    font-size: 16px;
+}
+    
+    .menu1_find_sub3 h3 {
+    font-size: 18px;
+    margin: 20px 0 10px 0;
+}
+    .sub2_box5_div2 {
+    font-size: 14px;
+}
+    .find3_tb1{
+        font-size: 16px;
+    }
+    .find3_tb2{
+        margin: 10px 0;
+        font-size: 17px;
+    }
+    
+    .find3_tb3{
+        font-size: 17px;
+    }
+    .menu1_find_sub3 td {
+    font-size: 17px;
+}
+    .sgin {
+    width: 30px;
+}
+   .find_sub3_btn {
+    height: 45px;
+    font-size: 16px;
+}
+    
+    .con_btn2 {
+    width: 110px;
+    /* height: 35px; */
+    line-height: 30px;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+    .con_btn2 a, .con_btn3 a, .con_btn4 a, .contract_btn2 a {
+    font-size: 16px;
+}
+    
+    .con_btn3 {
+    width: 90px;
+    /* height: 30px; */
+    line-height: 30px;
+    font-size: 17px;
+}
+    
+    .con_btn4 {
+    width: 58px;
+    /* height: 30px; */
+    line-height: 30px;
+    font-size: 17px;
+}
+    
+    .con_btn5 {
+    width: 70px;
+        height: 30px;
+        font-size: 16px;
+}
+    
+.contract_btn2 {
+    height: 50px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.menu2_sub2_p {
+    margin: 20px 0;
+    line-height: 22px;
+    font-size: 17px;
+}
+    
+    .menu2_sub2_tb th {
+        font-size: 19px;
+        padding: 15px 0;
+}
+    .menu2_sub2_tb td{
+        padding: 20px 0 20px 10px;
+        font-size: 17px;
+    }
+    
+    .menu2_sub2_tb td:last-child {
+        font-size: 19px;
+        padding: 15px 0;
+}
+    
+    .menu2_sub2_date {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+    
+    .menu2_sub2_date2 {
+    font-size: 15px;
+        margin-bottom: 10px;
+}
+    
+    .qna_sub_p {
+    font-size: 18px;
+        line-height: 25px;
+    letter-spacing: 0;
+    margin-bottom: 20px;
+}
+    
+    
+    select {
+    height: 45px;
+    background: #fff url(../images/row_06.jpg) no-repeat 96% 50%;
+    background-size: 15px;
+        font-size: 18px;
+}
+    
+    .file {
+    height: 45px;
+    margin: 20px 0;
+    padding: 12px 0 0 10px;
+        font-size: 18px;
+}
+    
+    .file img {
+    top: 15px;
+    width: 15px;
+}
+    
+    .skill_sub_btn {
+    height: 45px;
+    font-size: 18px;
+}
+    
+    textarea{
+        padding: 10px;
+        font-size: 16px;
+    }
+
+
+    .menu4_box h2 {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+    
+    .menu4_my_box1 li {
+   font-size: 18px;
+        padding: 13px 0
+}
+    
+    .menu4_box p {
+    font-size: 19px;
+        line-height: 25px;
+}
+    
+    
+.go {
+    width: 12px;
+    margin: 3px 0 0 20px;
+}
+ 
+.switch {
+    width: 55px;
+    height: 33px;
+}
+
+.slider:before {
+    height: 30px;
+    width: 30px;
+    left: 1px;
+    bottom: 1.5px;
+}
+
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(23px);
+    -ms-transform: translateX(23px);
+    transform: translateX(23px);
+}
+
+    .menu4_my_sub1 li {
+    font-size: 18px;
+    padding: 15px 0 20px 0;
+    
+}
+    
+    .my_sub1_btn {
+    width: 55px;
+    height: 30px;
+    font-size: 16px;
+}
+    .my_sub1_btn2 {
+     width: 55px;
+    height: 30px;
+    font-size: 16px;
+}
+    
+    
+    footer p {
+    font-size: 16px;
+        line-height: 21px;
+}
+    
+    
+    
+    .map_sub h2 {
+    font-size:20px;
+}
+    .map_sub p {
+    font-size: 16px;
+}
+    
+    .find_pop_inBox {
+    width: 50%;
+    height: 220px;
+}
+    .sign_backImg {
+    height: 150px;
+   
+}
+    .sign_ok {
+    height: 40px;
+    font-size: 17px;
+        margin-top: 7px;
+}
+    .sign_no {
+     height: 40px;
+    font-size: 17px;
+        margin-top: 7px;
+}
+    
+    .my_pop_name {
+    width:50%;
+    height: 200px;
+}
+    .my_pop_mail {
+    width:50%;
+    height: 200px;
+}
+    .pop2 ul {
+    margin: 25px 0;
+}
+    .pop2 li input {
+    height: 40px;
+    font-size: 16px;
+}
+    .pop2 li select {
+    height: 40px;
+    font-size: 16px;
+}
+    
+    .pop_h1 {
+    margin-top: 20px;
+    font-size: 19px;
+}
+    .my_pop_name input {
+  height: 40px;
+        font-size: 17px;
+}
+    
+    .pop_orange {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+    .my_pop_btn1 {
+    width: 45%;
+    height: 40px;
+    font-size: 17px;
+}
+    .my_pop_btn2 {
+   width: 45%;
+    height: 40px;
+    font-size: 17px;
+}
+    
+    .type {
+    font-size: 18px;
+}
+    .notify .notify_title h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+    .notify .notify_title p {
+    font-size: 16px;
+}
+    
+    
+.pw_btn2 {
+    border-radius: 20px;
+    width: 110px;
+    height: 40px;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 18px;
+}
+    .pw_btn3 {
+   border-radius: 20px;
+    width: 110px;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+    
+    .skill li{
+        height: 200px;
+        margin: 10px;
+    }
+    .skill li a {
+    height: 200px;
+}
+    
+    
+    .skill li img {
+    width: 85px;
+    margin: 40px 0 20px 0;
+}
+    
+    .skill .skillP{
+        font-size: 16px;
+    }
+    
+    .skill_btn{
+         height: 45px;
+    }
+    .skill_btn a {
+    height: 45px;
+    padding: 13px 0 0 15px;
+    font-size: 18px;
+}
+    .skill_btn img {
+    right: 15px;
+    top: 15px;
+    width: 10px;
+}
+    .skill_my_box li h4 {
+  font-size: 20px;
+}
+    .skill_my_box li p {
+        font-size: 18px;
+}
+    
+    
+    .skill_my_box li .my_box2 {
+    width: 80px;
+    height: 30px;
+    padding-top: 5px;
+    font-size: 17px;
+}
+    
+    .skill_my_box li .my_box {
+    width: 80px;
+    height: 30px;
+    padding-top: 5px;
+    font-size: 17px;
+}
+    
+    .my_sub1 {
+        font-size: 18px;
+}
+    .my_sub2 {
+    font-size: 18px;
+}
+    
+    .my_sub_title {
+   font-size: 18px;
+}
+    
+    .my_sub_con {
+        padding: 15px;
+    font-size: 16px;
+}
+    .skill_sub1 input {
+   font-size: 18px;
+}
+    
+    
+    .my_pop_pw {
+    width: 50%;
+    height: 130px;
+}
+    .my_pop_pw .my_pop_btn2 {
+    margin-top: 20px;
+}
+    
+    
+    .my_sub_con {
+        padding: 15px;
+    font-size: 16px;
+}
+    .skill_sub1 input {
+   font-size: 18px;
+}
+    
+    
+    .my_pop_pw {
+    width: 50%;
+    height: 130px;
+}
+    .my_pop_pw .my_pop_btn2 {
+    margin-top: 20px;
+}
+    
+    .con_btn6 {
+    border: 1px solid #1e3259;
+    border-radius: 15px;
+    width: 133px;
+    /* height: 30px; */
+    line-height: 30px;
+    font-size: 17px;
+}
+    
+    .menu2_signBox .singP {
+    font-size: 18px;
+}
+    .orange {font-size: 18px;
+}
+    
+    
+    .orange_btn {
+        padding: 4px 15px;
+        font-size: 17px;
+}
+    
+    
+    .menu4_my_sub1 li p {
+    font-size: 19px;
+   line-height: 25px;
+}
+    
+    
+    
+    .new .new2{
+    top: 41px;
+    left: 42%;
+    width: 25px; 
+}
+    
+    
+    
+    
+    
+    
+    
+
+
+}
